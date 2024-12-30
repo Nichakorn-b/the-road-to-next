@@ -49,7 +49,8 @@ const TicketPage = () => {
       </div>
 
       <div className="flex-1 flex flex-col items-center gap-y-4 animate-fade-from-top">
-        {initialTickets.map((ticket) => (
+        {initialTickets.map((ticket) => {
+          return (
           <div
             key={ticket.id}
             className="w-full max-w-[420px] p-4 border border-slate-100 rounded"
@@ -67,7 +68,8 @@ const TicketPage = () => {
               View
             </Link>
           </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   );
