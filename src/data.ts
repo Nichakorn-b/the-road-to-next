@@ -1,6 +1,3 @@
-import { Content } from "next/font/google";
-import { title } from "process";
-
 export const initialTickets = [
     {
         id: "1",
