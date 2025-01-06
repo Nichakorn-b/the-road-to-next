@@ -1,7 +1,8 @@
-import { initialTickets } from "@/data";
-import Link from "next/link";
-import { ticketPath } from "@/paths";
 import clsx from "clsx";
+import Link from "next/link";
+
+import { initialTickets } from "@/data";
+import { ticketPath } from "@/paths";
 
 const CheckIcon = () => (
   <svg
