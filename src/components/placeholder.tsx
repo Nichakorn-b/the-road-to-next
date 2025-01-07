@@ -1,10 +1,10 @@
 import { LucideMessageSquareWarning } from "lucide-react";
-import { cloneElement } from "react";
+import { cloneElement, ReactElement } from "react";
 
 type PlaceholderProps = {
   label: string;
-  icon?: React.ReactElement<any>;
-  button?: React.ReactElement<any>;
+  icon?: ReactElement<{ className?: string }>;
+  button?: ReactElement<{ className?: string }>;
 };
 //if there's no provided icon from the outside, the default would be <LucideMessageSquareWarning/>
 export const Placeholder = ({ label, icon = <LucideMessageSquareWarning/>, button = <div/> }: PlaceholderProps) => {

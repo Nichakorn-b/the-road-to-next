@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { Placeholder } from "@/components/placeholder";
 import { Button } from "@/components/ui/button";
-import { initialTickets } from "@/data";
 import { TicketItem } from "@/features/ticket/components/ticket-item";
 import { getTicket } from "@/features/ticket/queries/get-ticket";
 import { ticketsPath } from "@/paths";
@@ -13,17 +12,20 @@ import { ticketsPath } from "@/paths";
 //   }>;
 // };
 
+//Change the type of TicketPageProps to handle the possibility of params being asynchronous. 
 type TicketPageProps = {
-  params: {
+  params: Promise<{
     ticketId: string;
-  }
+  }> | {
+    ticketId: string;
+  };
 };
 
-const TicketPage = async ({ params }: TicketPageProps) => {
-  const ticket = await getTicket(params.ticketId)
-  // const { ticketId } = await params;
 
-  // const ticket = initialTickets.find((ticket) => ticket.id === ticketId);
+const TicketPage = async ({ params }: TicketPageProps) => {
+  const resolvedParams = await params; // Await params if it's a Promise
+  const ticket = await getTicket(resolvedParams.ticketId)
+
 
   if (!ticket) {
     return (
