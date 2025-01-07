@@ -1,20 +1,29 @@
 import Link from "next/link";
+
 import { Placeholder } from "@/components/placeholder";
 import { Button } from "@/components/ui/button";
-import { initialTickets } from "@/data";
+//import { initialTickets } from "@/data";
 import { TicketItem } from "@/features/ticket/components/ticket-item";
 import { ticketsPath } from "@/paths";
+import { getTicket } from "@/features/ticket/queries/get-ticket";
+
+// type TicketPageProps = {
+//   params: Promise<{
+//     ticketId: string;
+//   }>;
+// };
 
 type TicketPageProps = {
-  params: Promise<{
+  params: {
     ticketId: string;
-  }>;
+  }
 };
 
 const TicketPage = async ({ params }: TicketPageProps) => {
-  const { ticketId } = await params;
+  const ticket = await getTicket(params.ticketId)
+  // const { ticketId } = await params;
 
-  const ticket = initialTickets.find((ticket) => ticket.id === ticketId);
+  // const ticket = initialTickets.find((ticket) => ticket.id === ticketId);
 
   if (!ticket) {
     return (
