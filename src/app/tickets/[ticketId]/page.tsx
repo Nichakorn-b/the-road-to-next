@@ -4,8 +4,8 @@ import { Placeholder } from "@/components/placeholder";
 import { Button } from "@/components/ui/button";
 import { initialTickets } from "@/data";
 import { TicketItem } from "@/features/ticket/components/ticket-item";
-import { ticketsPath } from "@/paths";
 import { getTicket } from "@/features/ticket/queries/get-ticket";
+import { ticketsPath } from "@/paths";
 
 // type TicketPageProps = {
 //   params: Promise<{
