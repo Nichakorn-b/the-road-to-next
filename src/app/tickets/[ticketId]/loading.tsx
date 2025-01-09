@@ -1,5 +1,7 @@
-import { Spinner } from "@/components/spinner"
+import { Spinner } from "@/components/spinner";
 
-export const Loading = () => {
-    return <Spinner />;
-}
+const Loading = () => {
+  return <Spinner />;
+};
+
+export default Loading; // Default export
