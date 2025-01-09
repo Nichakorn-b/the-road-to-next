@@ -2,7 +2,7 @@
 
 import { Ticket } from "@prisma/client";
 import clsx from "clsx";
-import { LucideArrowUpRightFromSquare, LucideTrash,  LucidePencil } from "lucide-react";
+import { LucideArrowUpRightFromSquare, LucidePencil,LucideTrash } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";

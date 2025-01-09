@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 
+import { CardCompact } from "@/components/card-compact";
 import { Heading } from "@/components/heading";
 import { Spinner } from "@/components/spinner";
-import { CardCompact } from "@/components/card-compact";
-import { TicketUpsertForm } from "@/features/ticket/components/ticket-upsert-form";
 import { TicketList } from "@/features/ticket/components/ticket-list";
+import { TicketUpsertForm } from "@/features/ticket/components/ticket-upsert-form";
 
 const TicketsPage = async () => {
   return (
